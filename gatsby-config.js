@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Francisco Arocas`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Francisco Arocas`,
+      summary: `who lives and study in Santa Cruz building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `My personal website.`,
+    siteUrl: `https://franciscoarocas.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `#`,
     },
   },
   plugins: [
