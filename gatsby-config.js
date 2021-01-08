@@ -9,6 +9,8 @@ module.exports = {
     siteUrl: `https://franciscoarocas.com/`,
     social: {
       twitter: `#`,
+      github: `https://github.com/franciscoarocas`,
+      linkedin: `https://www.linkedin.com/in/francisco-arocas/`,
     },
   },
   plugins: [
