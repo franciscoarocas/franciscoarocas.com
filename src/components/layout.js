@@ -49,33 +49,33 @@ const Layout = ({ location, title, children }) => {
   )
 
   return (
-    <div
+    <div id="content"
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(46),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
-	  {menu}
+      <div id="top">
+        <header>{header}</header>
+        {menu}
+      </div>
       <main style={{clear: `both`}}>{children}</main>
       <footer>
         <div style={{float: `left`}} className="bottomIcons">
-          <Link style={{color: `inherit`, boxShadow: `none`}} href="https://github.com/franciscoarocas" target="_blank" rel="noreferrer">
+          <Link style={{color: `inherit`, boxShadow: `none`}} to="https://github.com/franciscoarocas" target="_blank" rel="noreferrer">
             <Githubicon />
           </Link>
-          <Link style={{color: `inherit`, boxShadow: `none`}} href="https://www.linkedin.com/in/francisco-arocas/" target="_blank" rel="noreferrer">
+          <Link style={{color: `inherit`, boxShadow: `none`}} to="https://www.linkedin.com/in/francisco-arocas/" target="_blank" rel="noreferrer">
             <Linkedinicon />
           </Link>
-          <Link style={{color: `inherit`, boxShadow: `none`}} href="malito:franciscoarocash@gmail.com">
+          <Link style={{color: `inherit`, boxShadow: `none`}} to="malito:franciscoarocash@gmail.com">
             <Mailicon />
           </Link>
         </div>
         <div style={{float: `right`}}>
-          {new Date().getFullYear()}
-          &nbsp;-&nbsp;
-          <a href="https://franciscoarocas.com" style={{color: `inherit`}}>Francisco Arocas</a>
+          Build with <span role="img" aria-label="love">❤️</span> using Gatsby and ReactJS
         </div>
       </footer>
     </div>
