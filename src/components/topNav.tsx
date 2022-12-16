@@ -1,13 +1,13 @@
+
 import * as React from "react"
-import { Link } from "gatsby"
 
 const TopNav = () => {
 
   return (
     <nav className="topNav">
-      <li>Home</li>
-      <li>About Me</li>
-      <li>TimeLine</li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Me</a></li>
+      <li><a href="/timeline">TimeLine</a></li>
       <li>Hard Skills</li>
       {/*<li>Blog</li>*/}
       <li>Contact</li>

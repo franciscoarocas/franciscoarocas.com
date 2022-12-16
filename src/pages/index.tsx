@@ -19,9 +19,8 @@ const Index: React.FC<PageProps<DataProps>> = ({
 
   return (
     <Layout title="Index" location={location}>
-      <h1>Francisco Arocas</h1>
-      <h2>Software Engineer</h2>
-      <p>Hola, soy Francisco Arocas, un Ingeniero de Software viviendo y trabajando en Tenerife.</p>
+      <h1>Software Engineer</h1>
+      <p>Hola, soy Francisco Arocas, un Ingeniero de Software actualmente viviendo y trabajando en Tenerife.</p>
       <div>
         <button>Linkedin</button>
         <button>GitHub</button>

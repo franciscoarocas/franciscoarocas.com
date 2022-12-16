@@ -70,6 +70,10 @@
   box-sizing: border-box;
 }
 
+html, body, #___gatsby, #gatsby-focus-wrapper, .global {
+  min-height: 100vh;
+}
+
 html {
   line-height: var(--lineHeight-normal);
   font-size: var(--fontSize-root);
@@ -83,9 +87,11 @@ body {
   color: var(--color-text);
 }
 
+/*
 footer {
   padding: var(--spacing-6) var(--spacing-0);
 }
+*/
 
 hr {
   background: var(--color-accent);
@@ -244,6 +250,9 @@ a:focus {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-global);
   padding: var(--spacing-10) var(--spacing-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .global-wrapper {
@@ -264,7 +273,7 @@ a:focus {
 }
 
 .main-heading {
-  font-size: var(--fontSize-7);
+  font-size: var(--fontSize-5);
   margin: 0;
 }
 
@@ -280,6 +289,11 @@ a:focus {
   border-bottom: 1px solid var(--color-text);
   padding-bottom: 1px;
   cursor: pointer;
+}
+
+.topNav a {
+  color: inherit !important;
+  text-decoration: none;
 }
 
 .topNav li:hover {
