@@ -10,7 +10,9 @@
   --maxWidth-2xl: 42rem;
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
+  --maxWidth-6xl: 68rem;
   --maxWidth-full: "100%";
+  --maxWidth-global: var(--maxWidth-6xl);
   --maxWidth-wrapper: var(--maxWidth-2xl);
   --spacing-px: "1px";
   --spacing-0: 0;
@@ -238,6 +240,12 @@ a:focus {
 
 /* Custom classes */
 
+.global {
+  margin: var(--spacing-0) auto;
+  max-width: var(--maxWidth-global);
+  padding: var(--spacing-10) var(--spacing-5);
+}
+
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
@@ -249,12 +257,34 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  /* margin-bottom: var(--spacing-12); */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .main-heading {
   font-size: var(--fontSize-7);
   margin: 0;
+}
+
+.topNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+}
+
+.topNav li {
+  margin: 10px;
+  border-bottom: 1px solid var(--color-text);
+  padding-bottom: 1px;
+  cursor: pointer;
+}
+
+.topNav li:hover {
+  border-bottom: none;
+  padding-bottom: 2px;
 }
 
 .post-list-item {
