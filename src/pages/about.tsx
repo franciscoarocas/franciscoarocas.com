@@ -19,7 +19,7 @@ const Index: React.FC<PageProps<DataProps>> = ({
 
   return (
     <Layout title="Using TypeScript" location={location}>
-      <h1>Sobre mi</h1>
+      <h1>📝 Sobre mi</h1>
       <p>Hola, soy Francisco Arocas, Ingeniero de Software por la Universidad de La Laguna, actualmente trabajando y viviendo en Santa Cruz de Tenerife, Islas Canarias, España.</p>
       <p>Actualmente trabajo principalmente con Python (Ingeniería de datos), pero también he realizado aplicaciones web utilizando Javascript, HTML y CSS.</p>
       <p>Además de librerías y Frameworks como ReactJS, Bootstrap y NextJS.</p>

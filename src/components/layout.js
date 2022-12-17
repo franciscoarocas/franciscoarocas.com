@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 
 import TopNav from '../components/topNav';
 
+import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from 'react-icons/ai'
+
 const Layout = ({ location, title, children }) => {
   
   //const rootPath = `${__PATH_PREFIX__}/`
@@ -19,9 +21,16 @@ const Layout = ({ location, title, children }) => {
       </header>
       <main className="global-wrapper">{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <div>
+          © {new Date().getFullYear()}, Built with ❤ using
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a> and <a href="https://reactjs.org/">ReactJS</a>
+        </div>
+        <div>
+          <AiFillLinkedin size={24}/>
+          <AiFillGithub size={24}/>
+          <AiOutlineMail size={24}/>
+        </div>
       </footer>
     </div>
   )

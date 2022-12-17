@@ -361,6 +361,87 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.timeLineItem ul {
+  padding-left: 2rem;
+}
+
+.timeLineTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.timeLineTitle h2 {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.ball {
+  display: block;
+  width : 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+}
+
+.socialButton {
+  display: inline-flex;
+  background-color: var(--color-primary);
+  font-family: var(--font-heading);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.socialButton svg {
+  margin-right: 8px;
+}
+
+.socialButton:hover { 
+  background-color: var(--color-heading-black);
+  transition: 1s;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.technologyIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+.technologyIcon h4 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 10px 10px;
+}
+
+.hardSkillSearch {
+  margin-bottom: var(--spacing-6);
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {
