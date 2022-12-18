@@ -7,6 +7,7 @@ import {IntlProvider, FormattedMessage } from 'react-intl';
 import { useCookies } from 'react-cookie';
 
 import TopNav from '../components/topNav';
+import CookiesMessage from "./cookiesMessage";
 
 import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from 'react-icons/ai'
 
@@ -58,6 +59,7 @@ const Layout = ({ location, title, children }) => {
             <a href="mailto:hola@franciscoarocas.com"><AiOutlineMail size={24}/></a>
           </div>
         </footer>
+        <CookiesMessage/>
       </div>
     </IntlProvider>
   )
