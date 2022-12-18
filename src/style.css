@@ -532,6 +532,37 @@ footer {
     display: none !important;
   }
 
+  .skills {
+    grid-template-columns: 1fr 1fr 1fr; 
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .skills {
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  footer {
+    flex-direction: column;
+    line-height: 3;
+    align-items: center;
+  }
+
+  footer svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .global-wrapper {
+    text-align: center;
+  }
+
+  .global-wrapper h1 {
+    font-size: 2rem;
+  }
+
 }
 
 .topMenuButton {
@@ -548,4 +579,8 @@ footer {
 
 .showMobile {
   display: flex !important;
+}
+
+.mobileClose {
+  display: none !important;
 }
