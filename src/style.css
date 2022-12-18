@@ -563,6 +563,10 @@ footer {
     font-size: 2rem;
   }
 
+  .mobileClose {
+    display: block !important;
+  }
+
 }
 
 .topMenuButton {
@@ -582,5 +586,5 @@ footer {
 }
 
 .mobileClose {
-  display: none !important;
+  display: none;
 }
