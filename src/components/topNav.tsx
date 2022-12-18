@@ -1,24 +1,26 @@
 
 import * as React from "react"
 
+import { FormattedMessage } from 'react-intl';
+
 import ESIcon from '../images/es.png'
 
 const links = [
   {
     link : "/",
-    name : "Contact"
+    name : "contact"
   },
   {
     link : "/about",
-    name : "About Me"
+    name : "aboutMe"
   },
   {
     link : "/timeline",
-    name : "TimeLine"
+    name : "timeLine"
   },
   {
     link : "/hardskills",
-    name : "HardSkills"
+    name : "hardSkills"
   }
 ];
 
@@ -30,8 +32,7 @@ const TopNav = ({currentPage}) => {
     <nav className="topNav">
       {
         links.map((link, index) => {
-          console.log(currentPageURL === link.link)
-          return <li className={currentPageURL === link.link ? "active" : ""}><a href={link.link} key={index}>{link.name}</a></li>
+          return <li className={currentPageURL === link.link ? "active" : ""}><a href={link.link} key={index}><FormattedMessage id={`menu_${link.name}`}/></a></li>
         })
       }
       {/*<li>Blog</li>*/}
