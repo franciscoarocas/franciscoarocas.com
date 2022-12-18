@@ -42,13 +42,13 @@ const TopNav = ({currentPage}) => {
     if (currentLang === 'es') {
       return (
         <>
-          <img src={ESIcon}/> Español
+          <img src={ENIcon}/> English
         </>
       )
     } else {
       return (
         <>
-          <img src={ENIcon}/> English
+          <img src={ESIcon}/> Español
         </>
       );
     }
