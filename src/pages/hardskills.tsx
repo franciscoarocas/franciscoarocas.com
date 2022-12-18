@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import Skill from "../components/skill"
+import SkillSearch from "../components/skillsSearch"
 
 import { FaReact } from 'react-icons/fa';
 import { SiPython, SiJavascript, SiRaspberrypi, SiCss3, SiHtml5, SiLinux, SiMysql, SiCplusplus, SiBootstrap, SiPhp, SiDocker, SiPandas } from 'react-icons/si';
@@ -139,10 +140,10 @@ const Index: React.FC<PageProps<DataProps>> = ({
   };
 
   return (
-    <Layout title="Using TypeScript" location={location}>
+    <Layout title="HardSkills" location={location}>
       <div>
         <h1>🛠 Hard Skills</h1>
-        <input className="hardSkillSearch" placeholder="Filtrar" onChange={(e : React.ChangeEvent<HTMLInputElement>) => { setSkillInputValue(e.target.value.toLowerCase()) }}/>
+        <SkillSearch showDeleteIcon={skillInputValue.length !== 0} setSkillInputValue={setSkillInputValue}/>
           {filteredSkills()}
       </div>
     </Layout>
@@ -150,7 +151,7 @@ const Index: React.FC<PageProps<DataProps>> = ({
 
 }
 
-export const Head: HeadFC<DataProps> = () => <Seo title="Using TypeScript" />
+export const Head: HeadFC<DataProps> = () => <Seo title="HardSkills" />
 
 export default Index
 
