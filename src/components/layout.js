@@ -4,6 +4,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 import {IntlProvider, FormattedMessage } from 'react-intl';
+import { useCookies } from 'react-cookie';
 
 import TopNav from '../components/topNav';
 
@@ -19,10 +20,14 @@ const messages = {
 
 const Layout = ({ location, title, children }) => {
   
-  const language = navigator.language.split(/[-_]/)[0];
+  const browserLanguage = navigator.language.split(/[-_]/)[0] === 'es' ? 'es' : 'en';
+
+  const [cookies, setCookie] = useCookies(['lang']);
+
+  const lang = cookies['lang'] ? cookies['lang'] : browserLanguage;
 
   return (
-    <IntlProvider locale={navigator.language} messages={messages[language]} defaultLocale="en">
+    <IntlProvider locale={lang} messages={messages[lang]} defaultLocale="en">
       <div className="global">
         <header className="global-header">
           <h1 className="main-heading">
