@@ -24,9 +24,9 @@ const Index: React.FC<PageProps<DataProps>> = ({
       <h1>💻 Software Engineer</h1>
       <p>Hola, soy Francisco Arocas, un Ingeniero de Software actualmente viviendo y trabajando en Tenerife.</p>
       <div>
-        <div className="socialButton"><AiFillLinkedin size={24}/> Linkedin</div>
-        <div className="socialButton"><AiFillGithub size={24}/> GitHub</div>
-        <div className="socialButton"><AiOutlineMail size={24}/> Email</div>
+        <a href="https://www.linkedin.com/in/francisco-arocas/" target="_blank"><div className="socialButton"><AiFillLinkedin size={24}/> Linkedin</div></a>
+        <a href="https://github.com/franciscoarocas/" target="_blank"><div className="socialButton"><AiFillGithub size={24}/> GitHub</div></a>
+        <a href="mailto:hola@franciscoarocas.com"><div className="socialButton"><AiOutlineMail size={24}/> Email</div></a>
       </div>
     </Layout>
   )

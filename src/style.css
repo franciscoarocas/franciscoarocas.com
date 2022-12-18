@@ -301,6 +301,13 @@ a:focus {
   padding-bottom: 2px;
 }
 
+.topNav .active {
+  border-bottom: 0;
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: var(--color-primary) !important;
+}
+
 .post-list-item {
   margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
@@ -424,6 +431,19 @@ footer {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 0;
+}
+
+.technologyIcon:hover {
+  background-color: var(--color-primary);
+  transition: 1s;
+}
+
+.technologyIcon:hover svg {
+  fill: white;
+}
+
+.technologyIcon:hover h4 {
+  color: white;
 }
 
 .skills {
