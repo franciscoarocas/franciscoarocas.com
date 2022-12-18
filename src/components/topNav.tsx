@@ -1,6 +1,8 @@
 
 import * as React from "react"
 
+import ESIcon from '../images/es.png'
+
 const links = [
   {
     link : "/",
@@ -33,6 +35,7 @@ const TopNav = ({currentPage}) => {
         })
       }
       {/*<li>Blog</li>*/}
+      {<li className="langButton" key={links.length}><img src={ESIcon}/> Español</li>}
     </nav>
   )
 
