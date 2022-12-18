@@ -14,6 +14,8 @@ import { DiDjango, DiNodejsSmall } from 'react-icons/di';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { FiDatabase } from 'react-icons/fi';
 
+import { FormattedMessage } from 'react-intl';
+
 const ICONS_SIZE = 64
 
 

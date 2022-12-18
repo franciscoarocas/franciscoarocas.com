@@ -1,6 +1,8 @@
 // If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
-import { PageProps, Link, graphql, HeadFC } from "gatsby"
+import { PageProps, graphql, HeadFC } from "gatsby"
+
+import { FormattedMessage } from 'react-intl';
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -19,10 +21,10 @@ const Index: React.FC<PageProps<DataProps>> = ({
 
   return (
     <Layout title="Using TypeScript" location={location}>
-      <h1>📝 Sobre mi</h1>
-      <p>Hola, soy Francisco Arocas, Ingeniero de Software por la Universidad de La Laguna, actualmente trabajando y viviendo en Santa Cruz de Tenerife, Islas Canarias, España.</p>
-      <p>Actualmente trabajo principalmente con Python (Ingeniería de datos), pero también he realizado aplicaciones web utilizando Javascript, HTML y CSS.</p>
-      <p>Además de librerías y Frameworks como ReactJS, Bootstrap y NextJS.</p>
+      <h1>📝 <FormattedMessage id="about_title"/></h1>
+      <p><FormattedMessage id="about_text1"/></p>
+      <p><FormattedMessage id="about_text2"/></p>
+      <p><FormattedMessage id="about_text3"/></p>
     </Layout>
   )
 

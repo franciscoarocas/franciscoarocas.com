@@ -6,7 +6,7 @@ const SkillSearch = ({showDeleteIcon, setSkillInputValue}) => {
 
   return (
     <div className="hardSkillSearch">
-      <input placeholder="Filtrar" onChange={(e : React.ChangeEvent<HTMLInputElement>) => { setSkillInputValue(e.target.value.toLowerCase()) }}/>
+      <input placeholder={"Filter"} onChange={(e : React.ChangeEvent<HTMLInputElement>) => { setSkillInputValue(e.target.value.toLowerCase()) }}/>
       {showDeleteIcon && <div className="hardSkillIcon" onClick={(_ : React.MouseEvent<HTMLInputElement>) => { setSkillInputValue("") }}><RxCross2 size={24}/></div>}
     </div>
   );

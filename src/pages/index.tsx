@@ -5,6 +5,8 @@ import { PageProps, Link, graphql, HeadFC } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import { FormattedMessage } from 'react-intl';
+
 import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from 'react-icons/ai'
 
 type DataProps = {
@@ -22,7 +24,7 @@ const Index: React.FC<PageProps<DataProps>> = ({
   return (
     <Layout title="Index" location={location}>
       <h1>💻 Software Engineer</h1>
-      <p>Hola, soy Francisco Arocas, un Ingeniero de Software actualmente viviendo y trabajando en Tenerife.</p>
+      <p><FormattedMessage id="index_text"/></p>
       <div>
         <a href="https://www.linkedin.com/in/francisco-arocas/" target="_blank"><div className="socialButton"><AiFillLinkedin size={24}/> Linkedin</div></a>
         <a href="https://github.com/franciscoarocas/" target="_blank"><div className="socialButton"><AiFillGithub size={24}/> GitHub</div></a>
