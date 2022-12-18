@@ -27,17 +27,12 @@ const links = [
   }
 ];
 
-const TopNav = ({currentPage}) => {
+const TopNav = ({currentPage, changeLang, currentLang}) => {
 
-  const language = navigator.language.split(/[-_]/)[0] ? 'es' : 'en';
   const currentPageURL = currentPage.length > 1 ? currentPage.substring(0, currentPage.length - 1) : currentPage;
-
-  const [cookies, setCookie] = useCookies(['lang']);
 
 
   const generateLangIcon = () => {
-
-    const currentLang = !cookies['lang'] ? language : cookies['lang'];
 
     if (currentLang === 'es') {
       return (
@@ -52,17 +47,6 @@ const TopNav = ({currentPage}) => {
         </>
       );
     }
-  }
-
-
-  const changeLang = (_ : React.MouseEvent<HTMLInputElement>) => {
-
-    const currentLang = !cookies['lang'] ? language : cookies['lang'];
-
-    console.log(currentLang)
-
-    setCookie('lang', currentLang === 'es' ? 'en' : 'es');
-
   }
 
 

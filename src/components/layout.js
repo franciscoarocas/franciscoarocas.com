@@ -24,7 +24,17 @@ const Layout = ({ location, title, children }) => {
 
   const [cookies, setCookie] = useCookies(['lang']);
 
-  const lang = cookies['lang'] ? cookies['lang'] : browserLanguage;
+  const [lang, setLang] = React.useState(cookies['lang'] ? cookies['lang'] : browserLanguage);
+
+  const changeLang = () => {
+    if (lang === 'es') {
+      setLang('en');
+      setCookie('lang', 'en', { path : '/' });
+    } else {
+      setLang('es');
+      setCookie('lang', 'es', { path : '/' });
+    }
+  }
 
   return (
     <IntlProvider locale={lang} messages={messages[lang]} defaultLocale="en">
@@ -33,7 +43,7 @@ const Layout = ({ location, title, children }) => {
           <h1 className="main-heading">
             <Link to="/">Francisco Arocas</Link>
           </h1>
-          <TopNav currentPage={location.pathname}/>
+          <TopNav currentPage={location.pathname} changeLang={changeLang} currentLang={lang}/>
         </header>
         <main className="global-wrapper">{children}</main>
         <footer>
