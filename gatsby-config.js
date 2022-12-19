@@ -11,16 +11,19 @@ module.exports = {
   siteMetadata: {
     title: `Francisco Arocas`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Francisco Arocas`,
+      summary: `A Software Engineer currently living and working in Tenerife.`,
     },
     description: `A Software Engineer currently living and working in Tenerife.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://franciscoarocas.com`
+    /*
     social: {
       twitter: `kylemathews`,
     },
+    */
   },
   plugins: [
+    'gatsby-plugin-cname',
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
