@@ -20,7 +20,7 @@ const Index: React.FC<PageProps<DataProps>> = ({
 }) => {
 
   return (
-    <Layout title="Using TypeScript" location={location}>
+    <Layout title="About me" location={location}>
       <h1>📝 <FormattedMessage id="about_title"/></h1>
       <p><FormattedMessage id="about_text1"/></p>
       <p><FormattedMessage id="about_text2"/></p>

@@ -31,5 +31,7 @@
   "cab_title" : "Cabildo de Tenerife",
   "cab_period" : "November 2021 - January 2022",
   "cab_p1" : "External practices of the university. Responsible for the design, development and pre-production of a Full Stack application for data processing and visualization (Big Data) of vehicle capacity for the Cabildo de Tenerife using Django (Python), React (JavaScript) and Bootstrap.",
-  "filter" : "Filter"
+  "filter" : "Filter",
+  "cookie_p1" : "On this website we only use cookies to change languages.",
+  "cookie_p2" : "When changing the language, it is stored in a cookie."
 }

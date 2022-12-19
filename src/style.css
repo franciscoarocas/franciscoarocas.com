@@ -362,6 +362,13 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.timeLineContent {
+  border-left: 1px solid black;
+  padding-left: 2rem;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
 .timeLineItem ul {
   padding-left: 2rem;
 }
@@ -569,6 +576,55 @@ footer {
 
 }
 
+@media (max-width: 440px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .global-wrapper h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .topMenuButton {
+    margin-top: 1rem;
+  }
+
+  .credits {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .socialButton {
+    margin-top: 1rem;
+    margin-right: 0;
+  }
+
+  .ball {
+    display: none;
+  }
+
+  .skills {
+    grid-template-columns: 1fr; 
+  }
+
+  .global-wrapper {
+    padding: 0;
+  }
+
+  .timeLineContent {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .timeLineContent ul {
+    padding-left: 0 !important;
+  }
+
+}
+
 .topMenuButton {
   display: none;
 }
@@ -622,4 +678,8 @@ footer {
 
 .hide {
   display: none;
+}
+
+.content {
+  max-width: 600px;
 }

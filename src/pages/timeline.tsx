@@ -22,8 +22,8 @@ const TimeLine: React.FC<PageProps<DataProps>> = ({
 }) => {
 
   return (
-    <Layout title="Index" location={location}>
-      <div style={{maxWidth : '600px'}}>
+    <Layout title="TimeLine" location={location}>
+      <div className="content">
         <h1 style={{marginBottom : '3rem'}}>⏱ TimeLine</h1>
         <TimeLineItem
           name={<FormattedMessage id="gtc_title"/>}

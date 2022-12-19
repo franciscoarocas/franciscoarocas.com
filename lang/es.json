@@ -31,5 +31,7 @@
   "cab_title" : "Cabildo de Tenerife",
   "cab_period" : "Noviembre 2021 - Enero 2022",
   "cab_p1" : "Prácticas externas de la universidad. Responsable de diseño, desarrollo y puesta en pre producción de aplicación Full Stack para tratamiento y visualización de datos (Big Data) de aforos de vehículos para el Cabildo de Tenerife utilizando Django (Python), React (JavaScript) y Bootstrap.",
-  "filter" : "Filtrar"
+  "filter" : "Filtrar",
+  "cookie_p1" : "En esta web solo utilizamos cookies para el cambio de idiomas.",
+  "cookie_p2" : "Al cambiar el idioma, se almacena este en una cookie."
 }

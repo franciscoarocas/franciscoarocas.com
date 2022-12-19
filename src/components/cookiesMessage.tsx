@@ -4,6 +4,8 @@ import { BiCookie } from 'react-icons/bi';
 
 import { RxCross2 } from 'react-icons/rx';
 
+import { FormattedMessage } from 'react-intl';
+
 const CookiesMessage = () => {
 
   const [showMessage, setShowMessage] = React.useState(false);
@@ -11,8 +13,8 @@ const CookiesMessage = () => {
   return (
     <div className="cookieMessageDiv">
       <div className={`cookieMessage ${showMessage ? "" : "hide"}`}>
-        <p>En esta web solo utilizamos cookies para el cambio de idiomas.</p>
-        <p>Al cambiar el idioma, se almacena este en una cookie.</p>
+        <p><FormattedMessage id="cookie_p1"/></p>
+        <p><FormattedMessage id="cookie_p2"/></p>
       </div>
       <div className="cookieMessageIcon" onClick={() => { setShowMessage(!showMessage) }}>
         {

@@ -48,7 +48,7 @@ const Layout = ({ location, title, children }) => {
         </header>
         <main className="global-wrapper">{children}</main>
         <footer>
-          <div>
+          <div className="credits">
             © {new Date().getFullYear()}, {<FormattedMessage id="footer"/>}
             {` `}
             <a href="https://www.gatsbyjs.com">Gatsby</a> {<FormattedMessage id="and"/>} <a href="https://reactjs.org/">ReactJS</a>

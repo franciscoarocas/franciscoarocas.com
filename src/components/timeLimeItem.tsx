@@ -13,7 +13,7 @@ const TimeLineItem = ({name, period, description}) => {
         </div>
       </div>
       </div>
-      <div style={{borderLeft : '1px solid black', paddingLeft : '2rem', paddingBottom : '5px', marginBottom: '15px'}}>
+      <div className="timeLineContent">
         <h6 style={{display : 'inline-block', margin: "0", paddingBottom : '5px', textDecoration : 'underline'}}>{period}</h6>
         <div>{description}</div>
       </div>
