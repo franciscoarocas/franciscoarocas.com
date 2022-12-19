@@ -21,7 +21,7 @@ const messages = {
 
 const Layout = ({ location, title, children }) => {
   
-  const browserLanguage = navigator.language.split(/[-_]/)[0] === 'es' ? 'es' : 'en';
+  const browserLanguage = 'en';
 
   const [cookies, setCookie] = useCookies(['lang']);
 

@@ -30,7 +30,7 @@ const Index: React.FC<PageProps<DataProps>> = ({
 
 }
 
-export const Head: HeadFC<DataProps> = () => <Seo title="Using TypeScript" />
+export const Head: HeadFC<DataProps> = () => <Seo title="About Me" />
 
 export default Index
 

@@ -35,6 +35,6 @@ const Index: React.FC<PageProps<DataProps>> = ({
 
 }
 
-export const Head: HeadFC<DataProps> = () => <Seo title="Sobre mi" />
+export const Head: HeadFC<DataProps> = () => <Seo title="Home" />
 
 export default Index
