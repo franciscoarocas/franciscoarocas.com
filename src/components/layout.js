@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { IntlProvider, FormattedMessage } from "react-intl";
+import { useCookies } from "react-cookie";
 
 import TopNav from "../components/topNav";
 import CookiesMessage from "./cookiesMessage";
@@ -16,27 +17,25 @@ const messages = {
 };
 
 const Layout = ({ location, title, children }) => {
+
   const [lang, setLang] = React.useState("en");
-  const [setCookie, setSetCookie] = React.useState(() => () => {});
-  const [mounted, setMounted] = React.useState(false);
+
+  /*
+  const [cookies, setCookie] = useCookies(["lang"]);
 
   React.useEffect(() => {
-    // Solo en cliente: importar y usar useCookies
-    const { useCookies } = require("react-cookie");
-    const [cookies, actualSetCookie] = useCookies(["lang"]);
-
-    const savedLang = cookies["lang"] || "en";
+    // Solo en cliente
+    const browserLanguage = "en"; // O puedes usar navigator.language
+    const savedLang = cookies["lang"] || browserLanguage;
     setLang(savedLang);
-    setSetCookie(() => actualSetCookie);
-    setMounted(true);
   }, []);
+  */
 
-  if (!mounted) return null;
 
   const changeLang = () => {
     const newLang = lang === "es" ? "en" : "es";
     setLang(newLang);
-    setCookie("lang", newLang, { path: "/" });
+    //setCookie("lang", newLang, { path: "/" });
   };
 
   return (

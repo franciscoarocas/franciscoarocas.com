@@ -30,6 +30,7 @@
     "react-intl": "^6.2.5"
   },
   "devDependencies": {
+    "dotenv-cli": "^8.0.0",
     "gh-pages": "^6.3.0",
     "prettier": "^2.8.0"
   },
@@ -45,7 +46,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build && gh-pages -d public -b master",
+    "deploy": "gatsby build && dotenv -- gh-pages -d public -b master -r https://$GH_TOKEN@github.com/franciscoarocas/franciscoarocas.com.git",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
