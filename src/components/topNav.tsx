@@ -1,8 +1,6 @@
 
 import * as React from "react"
 
-import { useCookies } from 'react-cookie';
-
 import { FormattedMessage } from 'react-intl';
 
 import ESIcon from '../images/es.png'

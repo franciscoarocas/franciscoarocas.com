@@ -4,18 +4,13 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
  */
 
-import React from 'react';
-import { CookiesProvider } from 'react-cookie';
+const React = require('react');
+const { CookiesProvider } = require('react-cookie');
 
-export const wrapRootElement = ({ element }) => (
-  <CookiesProvider>
-    {element}
-  </CookiesProvider>
-);
+exports.wrapRootElement = ({ element }) => {
+  return <CookiesProvider>{element}</CookiesProvider>;
+};
 
-/**
- * @type {import('gatsby').GatsbySSR['onRenderBody']}
- */
 exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
-}
+  setHtmlAttributes({ lang: 'en' });
+};
