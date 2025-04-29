@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 
 import { FormattedMessage } from 'react-intl';
 
-import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from 'react-icons/ai'
+import { AiFillLinkedin, AiFillGithub, AiOutlineMail, AiFillMediumSquare  } from 'react-icons/ai'
 
 type DataProps = {
   site: {
@@ -28,6 +28,7 @@ const Index: React.FC<PageProps<DataProps>> = ({
       <div className="homeSocialIcons">
         <a href="https://www.linkedin.com/in/francisco-arocas/" target="_blank"><div className="socialButton"><AiFillLinkedin size={24}/> Linkedin</div></a>
         <a href="https://github.com/franciscoarocas/" target="_blank"><div className="socialButton"><AiFillGithub size={24}/> GitHub</div></a>
+        <a href="https://blog.franciscoarocas.com" target="_blank"><div className="socialButton"><AiFillMediumSquare size={24}/> Medium</div></a>
         <a href="mailto:hola@franciscoarocas.com"><div className="socialButton"><AiOutlineMail size={24}/> Email</div></a>
       </div>
     </Layout>

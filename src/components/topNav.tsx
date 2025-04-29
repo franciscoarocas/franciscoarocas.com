@@ -58,10 +58,10 @@ const TopNav = ({currentPage, changeLang, currentLang}) => {
       <nav className={`topNav ${show ? "showMobile" : ""}`}>
         {
           links.map((link, index) => {
-            return <li className={currentPageURL === link.link ? "active" : ""}><a href={link.link} key={index}><FormattedMessage id={`menu_${link.name}`}/></a></li>
+            return <li className={currentPageURL === link.link ? "active" : ""}><a href={link.link} key={index} ><FormattedMessage id={`menu_${link.name}`}/></a></li>
           })
         }
-        {/*<li>Blog</li>*/}
+        {<li><a href="https://blog.franciscoarocas.com" key={links.length} target="_blank" rel="noopener noreferrer"><FormattedMessage id={'Blog'}/></a></li>}
         {<li onClick={changeLang} className="langButton" key={links.length}>{generateLangIcon()}</li>}
         {<li className="mobileClose" key={links.length + 1} onClick={() => setShow(false)}><RxCross2 size={24}/></li>}
       </nav>

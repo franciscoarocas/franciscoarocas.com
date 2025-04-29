@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie';
 import TopNav from '../components/topNav';
 import CookiesMessage from "./cookiesMessage";
 
-import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from 'react-icons/ai'
+import { AiFillLinkedin, AiFillGithub, AiOutlineMail, AiFillMediumSquare } from 'react-icons/ai'
 
 import messages_es from '../../lang/es.json';
 import messages_en from '../../lang/en.json';
@@ -54,8 +54,9 @@ const Layout = ({ location, title, children }) => {
             <a href="https://www.gatsbyjs.com">Gatsby</a> {<FormattedMessage id="and"/>} <a href="https://reactjs.org/">ReactJS</a>
           </div>
           <div>
-            <a href="https://www.linkedin.com/in/francisco-arocas/" target="_blank"><AiFillLinkedin size={24}/></a>
-            <a href="https://github.com/franciscoarocas/" target="_blank"><AiFillGithub size={24}/></a>
+            <a href="https://www.linkedin.com/in/francisco-arocas/" target="_blank" rel="noopener noreferrer"><AiFillLinkedin size={24}/></a>
+            <a href="https://github.com/franciscoarocas/" target="_blank" rel="noopener noreferrer"><AiFillGithub size={24}/></a>
+            <a href="https://blog.franciscoarocas.com" target="_blank" rel="noopener noreferrer"><AiFillMediumSquare size={24}/></a>
             <a href="mailto:hola@franciscoarocas.com"><AiOutlineMail size={24}/></a>
           </div>
         </footer>
