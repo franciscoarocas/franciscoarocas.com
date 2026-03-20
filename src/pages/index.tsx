@@ -23,7 +23,7 @@ const Index: React.FC<PageProps<DataProps>> = ({
 
   return (
     <Layout title="Index" location={location}>
-      <h1>💻 Software Engineer</h1>
+      <h1>Software Engineer</h1>
       <p><FormattedMessage id="index_text"/></p>
       <div className="homeSocialIcons">
         <a href="https://www.linkedin.com/in/francisco-arocas/" target="_blank"><div className="socialButton"><AiFillLinkedin size={24}/> Linkedin</div></a>
