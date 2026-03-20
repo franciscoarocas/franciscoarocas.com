@@ -10,6 +10,8 @@
   "dependencies": {
     "@fontsource/merriweather": "^4.5.14",
     "@fontsource/montserrat": "^4.5.13",
+    "baseline-browser-mapping": "^2.10.9",
+    "caniuse-lite": "^1.0.30001780",
     "gatsby": "^5.14.3",
     "gatsby-plugin-cname": "^1.0.0",
     "gatsby-plugin-feed": "^5.14.0",

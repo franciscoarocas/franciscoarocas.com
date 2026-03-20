@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { IntlProvider, FormattedMessage } from "react-intl";
-import { useCookies } from "react-cookie";
 
 import TopNav from "../components/topNav";
 import CookiesMessage from "./cookiesMessage";
