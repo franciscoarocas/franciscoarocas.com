@@ -130,7 +130,7 @@ button {
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 6px 10px;
-  max-height: min(430px, calc(100% - 60px));
+  max-height: calc(100% - var(--taskbar-h) - env(safe-area-inset-bottom, 0px));
 }
 .dicon {
   width: 88px;
@@ -888,4 +888,58 @@ button {
   height: 48px;
   border: 2px solid var(--ink);
   display: block;
+}
+
+/* ---------- aviso de cookies (notificación) ---------- */
+.toast {
+  position: absolute;
+  z-index: 25;
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: calc(var(--taskbar-h) + 12px + env(safe-area-inset-bottom, 0px));
+  width: min(360px, calc(100% - 24px));
+  padding: 3px;
+  box-shadow: inset -2px -2px 0 var(--chrome-lo), inset 2px 2px 0 var(--chrome-hi), 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+.toast-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ink);
+  color: #fff;
+  padding: 2px 3px 2px 8px;
+  font-size: 13px;
+}
+.toast-body {
+  display: flex;
+  gap: 12px;
+  padding: 12px 10px 10px;
+}
+.toast-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.toast-body b {
+  font-size: 16px;
+}
+.toast-body p {
+  margin: 4px 0 10px;
+  font-family: var(--font-doc);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.toast-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .toast {
+    animation: toast-in 0.35s steps(6) both;
+  }
+  @keyframes toast-in {
+    from {
+      transform: translateX(calc(100% + 24px));
+    }
+  }
 }

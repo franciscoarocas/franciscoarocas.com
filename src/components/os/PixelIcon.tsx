@@ -3,7 +3,7 @@ import * as React from "react"
 // Iconos pixel de 12×12. Cada letra es un color; "." es transparente.
 const PC: Record<string, string> = {
   k: "#121A2B", w: "#FFFFFF", g: "#B9C4D3", b: "#0A5FB4", l: "#6CB4FF", y: "#F4C430",
-  Y: "#D9A21B", o: "#E0582A", n: "#8A5A3C", s: "#8A94A6", G: "#27AE60", r: "#D9534F",
+  Y: "#D9A21B", C: "#D9A35B", c: "#4A2E1A", o: "#E0582A", n: "#8A5A3C", s: "#8A94A6", G: "#27AE60", r: "#D9534F",
 }
 
 const SPR: Record<string, string[]> = {
@@ -16,6 +16,7 @@ const SPR: Record<string, string[]> = {
   globe: ["....kkkk....", "..kkbllbkk..", ".kbllbbllbk.", ".kblGGbllbk.", "kbbGGGGbbbbk", "kblbGGbbllbk", "kbllbbbGGlbk", "kbbllbGGGbbk", ".kbllbbGGbk.", ".kbbllbbbbk.", "..kkbbbbkk..", "....kkkk...."],
   teide: ["............", "............", ".....ww.....", "....wwww....", "....nnnn....", "...nnnnnn...", "..nnnnnnnn..", ".nnnnnnnnnn.", "nnnnnnnnnnnn", "bbbbbbbbbbbb", "llbbllbbllbb", "............"],
   power: ["....kkkk....", "..kk.rr.kk..", ".k...rr...k.", "k....rr....k", "k....rr....k", "k..........k", "k..........k", "k..........k", ".k........k.", "..kk....kk..", "....kkkk....", "............"],
+  cookie: ["...kkkkkk...", "..kCCCCCCk..", ".kCCcCCCCCk.", "kCCCCCCcCCCk", "kCcCCCCCCCCk", "kCCCCcCCCCCk", "kCCCCCCCCcCk", "kCcCCCCCCCCk", ".kCCCCcCCCk.", "..kCCCCCCk..", "...kkkkkk...", "............"],
   flags: ["kkkkkkk.....", "krrrrrk.....", "kyyyyyk.....", "kyyyyyk.....", "krrrrrk.....", "kkkkkkk.....", ".....kkkkkkk", ".....kbwrwbk", ".....krrrrrk", ".....kbwrwbk", ".....kkkkkkk", "............"],
   warn: [".....kk.....", "....kyyk....", "....kyyk....", "...kyyyyk...", "...kykkyk...", "..kyykkyyk..", "..kyykkyyk..", ".kyyyyyyyyk.", ".kyyykkyyyk.", "kyyyyyyyyyyk", "kkkkkkkkkkkk", "............"],
 }

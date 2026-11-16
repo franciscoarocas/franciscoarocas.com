@@ -23,6 +23,10 @@ const Seo = ({ description, title, children }) => {
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta name="theme-color" content="#121A2B" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />

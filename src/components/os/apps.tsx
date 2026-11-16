@@ -63,6 +63,47 @@ export const LangApp: React.FC<AppCtx> = ({ lang, setLang, closeApp }) => {
   )
 }
 
+/* ---------- Cookies y privacidad ---------- */
+export const STORAGE_KEYS = { lang: "arocasos-lang", cookies: "arocasos-cookies", boot: "arocasos-booted" }
+
+export const CookiesApp: React.FC<AppCtx> = ({ s }) => {
+  const c = s.cookies
+  const [done, setDone] = React.useState(false)
+  const clear = () => {
+    try {
+      window.localStorage.removeItem(STORAGE_KEYS.lang)
+      window.localStorage.removeItem(STORAGE_KEYS.cookies)
+      window.sessionStorage.removeItem(STORAGE_KEYS.boot)
+    } catch (e) {}
+    setDone(true)
+  }
+  return (
+    <div className="doc">
+      <h1>{c.title}</h1>
+      <p>
+        <b>{c.noCookies}</b> {c.intro}
+      </p>
+      <h2>{c.storedTitle}</h2>
+      <ul>
+        {c.stored.map(x => (
+          <li key={x}>{x}</li>
+        ))}
+      </ul>
+      <p className="dim">{c.storedNote}</p>
+      <h2>{c.externalTitle}</h2>
+      <p>{c.external}</p>
+      <p>
+        <button type="button" className="btn" onClick={clear}>
+          {c.clear}
+        </button>{" "}
+        <span className="dim" aria-live="polite">
+          {done ? c.cleared : ""}
+        </span>
+      </p>
+    </div>
+  )
+}
+
 /* ---------- LEEME ---------- */
 export const ReadmeApp: React.FC<AppCtx> = ({ s }) => (
   <div className="doc">
@@ -409,7 +450,7 @@ export const TerminalApp: React.FC<AppCtx> = ({ lang, s, openApp, closeApp, setL
         } else out = <span className="err">lang es | lang en{"\n"}</span>
         break
       case "open": {
-        const map: Record<string, string> = { exp: "exp", experiencia: "exp", experience: "exp", habilidades: "skills", skills: "skills", mail: "mail", contacto: "mail", contact: "mail", cv: "cv", leeme: "readme", readme: "readme", about: "about", lang: "lang", idioma: "lang", language: "lang" }
+        const map: Record<string, string> = { exp: "exp", experiencia: "exp", experience: "exp", habilidades: "skills", skills: "skills", mail: "mail", contacto: "mail", contact: "mail", cv: "cv", leeme: "readme", readme: "readme", about: "about", lang: "lang", idioma: "lang", language: "lang", cookies: "cookies", privacidad: "cookies", privacy: "cookies" }
         if (map[a]) {
           openApp(map[a])
           out = "  " + s.term.opening(a) + "\n"

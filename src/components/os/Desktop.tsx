@@ -4,12 +4,12 @@ import PixelIcon, { IconName } from "./PixelIcon"
 import Window, { WinState } from "./Window"
 import { startScene, SceneHandle } from "./scene"
 import { useLang } from "./useLang"
-import { AboutApp, AppCtx, ContactApp, CvApp, ExperienceApp, LangApp, ReadmeApp, SkillsApp, TerminalApp } from "./apps"
+import { AboutApp, AppCtx, ContactApp, CookiesApp, CvApp, ExperienceApp, LangApp, ReadmeApp, SkillsApp, STORAGE_KEYS, TerminalApp } from "./apps"
 import { jobs, LINKS, NAME, yearsOfExperience } from "../../data/profile"
 import { t } from "../../data/strings"
 import type { Strings } from "../../data/strings"
 
-type AppId = "readme" | "about" | "exp" | "skills" | "term" | "mail" | "cv" | "lang"
+type AppId = "readme" | "about" | "exp" | "skills" | "term" | "mail" | "cv" | "lang" | "cookies"
 
 interface AppDef {
   icon: IconName
@@ -30,10 +30,11 @@ const APPS: Record<AppId, AppDef> = {
   mail: { icon: "mail", w: 500, h: 460, Comp: ContactApp },
   cv: { icon: "doc", w: 580, h: 500, menu: true, Comp: CvApp },
   lang: { icon: "flags", w: 400, h: 290, dialog: true, Comp: LangApp },
+  cookies: { icon: "cookie", w: 520, h: 440, menu: true, Comp: CookiesApp },
 }
 
-const DESKTOP_ICONS: (AppId | "blog")[] = ["readme", "about", "exp", "skills", "term", "mail", "lang", "blog"]
-const START_ITEMS: AppId[] = ["exp", "skills", "term", "mail", "cv", "lang"]
+const DESKTOP_ICONS: (AppId | "blog")[] = ["readme", "about", "exp", "skills", "term", "mail", "lang", "cookies", "blog"]
+const START_ITEMS: AppId[] = ["exp", "skills", "term", "mail", "cv", "lang", "cookies"]
 const TASKBAR_H = 42
 const BOOT_KEY = "arocasos-booted"
 
@@ -59,6 +60,7 @@ const Desktop: React.FC = () => {
   const [mobile, setMobile] = React.useState(false)
   const [selected, setSelected] = React.useState<string | null>(null)
   const [nightOverride, setNightOverride] = React.useState<boolean | null>(null)
+  const [cookieToast, setCookieToast] = React.useState(false)
   const zRef = React.useRef(10)
   const openedRef = React.useRef(0)
   const layerRef = React.useRef<HTMLDivElement>(null)
@@ -142,6 +144,12 @@ const Desktop: React.FC = () => {
       saved = window.localStorage.getItem("arocasos-lang")
     } catch (e) {}
     if (!saved) openApp("lang")
+    // Aviso de cookies hasta que se acepte
+    let seen: string | null = null
+    try {
+      seen = window.localStorage.getItem(STORAGE_KEYS.cookies)
+    } catch (e) {}
+    if (!seen) setCookieToast(true)
   }, [openApp])
 
   const runBoot = React.useCallback(() => {
@@ -215,6 +223,13 @@ const Desktop: React.FC = () => {
     document.addEventListener("pointerdown", onDown)
     return () => document.removeEventListener("pointerdown", onDown)
   }, [startOpen])
+
+  const dismissCookies = () => {
+    setCookieToast(false)
+    try {
+      window.localStorage.setItem(STORAGE_KEYS.cookies, "1")
+    } catch (e) {}
+  }
 
   const ctxFor = (w: WinState): AppCtx => ({ lang, s, arg: w.arg, openApp, closeApp, setLang })
   const title = (id: AppId) => (id === "lang" ? s.startMenu.lang : s.apps[id])
@@ -369,6 +384,39 @@ const Desktop: React.FC = () => {
           <span id="clock">{clock}</span>
         </div>
       </div>
+
+      {cookieToast && (
+        <div className="toast raised" role="status" aria-label={s.cookies.toastTitle}>
+          <div className="toast-head">
+            <span>ArocasOS</span>
+            <button type="button" className="tb-btn" aria-label={s.close} onClick={dismissCookies}>
+              ×
+            </button>
+          </div>
+          <div className="toast-body">
+            <PixelIcon name="cookie" className="toast-icon" />
+            <div>
+              <b>{s.cookies.toastTitle}</b>
+              <p>{s.cookies.toastText}</p>
+              <div className="toast-btns">
+                <button type="button" className="btn primary" onClick={dismissCookies}>
+                  {s.cookies.ok}
+                </button>
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => {
+                    dismissCookies()
+                    openApp("cookies")
+                  }}
+                >
+                  {s.cookies.more}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {boot !== "done" && (
         <div className="overlay boot" aria-hidden="true" onClick={() => boot === "running" && finishBoot()}>
