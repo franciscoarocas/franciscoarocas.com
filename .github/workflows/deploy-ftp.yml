@@ -1,9 +1,12 @@
-name: Deploy website to production
+name: Deploy to production
 
+# Todo lo que llega a la rama principal se compila y se sube por FTP al hosting (DonDominio).
+# Vale `master` o `main` (la que exista). También se puede lanzar a mano desde la pestaña Actions.
 on:
   push:
     branches:
       - master
+      - main
   workflow_dispatch:
 
 permissions:
@@ -12,15 +15,21 @@ permissions:
 env:
   GATSBY_TELEMETRY_DISABLED: "1"
 
+# Un despliegue cada vez. No se cancela uno a medias para no dejar la web a medio subir.
 concurrency:
   group: production-deploy
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
     name: Build and deploy via FTP
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment: production
+    # Los secretos y variables FTP están en el entorno `gh-pages`
+    # (Settings → Environments → gh-pages).
+    environment:
+      name: gh-pages
+      url: https://franciscoarocas.com
 
     steps:
       - name: Checkout repository
@@ -30,9 +39,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
       - name: Build Gatsby website
         run: npm run build
@@ -43,5 +53,11 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public/
+          # Variables opcionales del entorno (no son secretas):
+          #   FTP_PROTOCOL: ftp | ftps (por defecto ftp)
+          #   FTP_PORT: por defecto 21
+          #   FTP_SERVER_DIR: carpeta de la web en el servidor, acabada en / (por defecto public/)
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftp' }}
+          port: ${{ vars.FTP_PORT || 21 }}
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public/' }}
           local-dir: ./public/
