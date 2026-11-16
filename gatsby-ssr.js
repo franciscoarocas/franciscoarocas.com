@@ -4,13 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
  */
 
-const React = require('react');
-const { CookiesProvider } = require('react-cookie');
-
-exports.wrapRootElement = ({ element }) => {
-  return <CookiesProvider>{element}</CookiesProvider>;
-};
-
+// El HTML generado está en español; en el navegador se cambia según el idioma elegido.
 exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: 'en' });
-};
+  setHtmlAttributes({ lang: "es" })
+}

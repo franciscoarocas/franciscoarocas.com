@@ -1,15 +1,13 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "franciscoarocas.com",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Web personal de Francisco Arocas: ArocasOS, un escritorio retro en pixel art.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Francisco Arocas",
   "dependencies": {
-    "@fontsource/merriweather": "^4.5.14",
-    "@fontsource/montserrat": "^4.5.13",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/pixelify-sans": "^5.3.0",
+    "@fontsource/vt323": "^5.3.0",
     "baseline-browser-mapping": "^2.10.9",
     "caniuse-lite": "^1.0.30001780",
     "gatsby": "^5.14.3",
@@ -26,24 +24,22 @@
     "gatsby-transformer-sharp": "^5.14.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
-    "react-cookie": "^8.0.1",
-    "react-dom": "^18.1.0",
-    "react-icons": "^4.7.1",
-    "react-intl": "^6.2.5"
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "dotenv-cli": "^8.0.0",
     "gh-pages": "^6.3.0",
     "prettier": "^2.8.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://franciscoarocas.com",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio"
   ],
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/franciscoarocas/franciscoarocas.com.git"
   },
   "scripts": {
     "build": "gatsby build",

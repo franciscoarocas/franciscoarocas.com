@@ -1,19 +1,9 @@
-// custom typefaces
-import "@fontsource/montserrat/variable.css"
-import "@fontsource/merriweather"
-// normalize CSS across browsers
-import "./src/normalize.css"
-// custom CSS styles
+// Fuentes servidas desde el propio sitio (sin Google Fonts)
+import "@fontsource/pixelify-sans/400.css"
+import "@fontsource/pixelify-sans/600.css"
+import "@fontsource/pixelify-sans/700.css"
+import "@fontsource/vt323/400.css"
+import "@fontsource/ibm-plex-mono/400.css"
+import "@fontsource/ibm-plex-mono/600.css"
+// estilos de ArocasOS
 import "./src/style.css"
-
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
-
-import React from 'react';
-import { CookiesProvider } from 'react-cookie';
-
-export const wrapRootElement = ({ element }) => (
-  <CookiesProvider>
-    {element}
-  </CookiesProvider>
-);

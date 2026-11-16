@@ -12,9 +12,9 @@ module.exports = {
     title: `Francisco Arocas`,
     author: {
       name: `Francisco Arocas`,
-      summary: `A Software Engineer currently living and working in Tenerife.`,
+      summary: `Backend Engineer en Tenerife. APIs, pipelines de datos y Python.`,
     },
-    description: `A Software Engineer currently living and working in Tenerife.`,
+    description: `Francisco Arocas, Backend Engineer en Tenerife. APIs, pipelines de datos y Python.`,
     siteUrl: `https://franciscoarocas.com`
     /*
     social: {
