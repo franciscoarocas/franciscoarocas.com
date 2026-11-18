@@ -22,7 +22,7 @@ const Seo = ({ description, title, children }) => {
     <>
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
-      <meta name="theme-color" content="#121A2B" />
+      <meta name="theme-color" content="#2443D6" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

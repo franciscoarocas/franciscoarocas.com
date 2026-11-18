@@ -17,7 +17,7 @@ export const RedirectHead: React.FC<{ to: string }> = ({ to }) => (
   <>
     <meta httpEquiv="refresh" content={`0; url=${to}`} />
     <meta name="robots" content="noindex" />
-    <link rel="canonical" href={`https://franciscoarocas.com${to.split("?")[0]}`} />
+    <link rel="canonical" href={`https://franciscoarocas.com${to.split(/[?#]/)[0]}`} />
   </>
 )
 
