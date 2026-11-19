@@ -12,9 +12,9 @@ module.exports = {
     title: `Francisco Arocas`,
     author: {
       name: `Francisco Arocas`,
-      summary: `Backend Engineer en Tenerife. APIs, pipelines de datos y Python.`,
+      summary: `Ingeniero informático y máster en IA. Backend, datos e inteligencia artificial para empresas.`,
     },
-    description: `Francisco Arocas, Backend Engineer en Tenerife. APIs, pipelines de datos y Python.`,
+    description: `Francisco Arocas, ingeniero informático y máster en IA. Desarrollo backend, automatización, pipelines de datos e inteligencia artificial para empresas, desde Tenerife.`,
     siteUrl: `https://franciscoarocas.com`
     /*
     social: {

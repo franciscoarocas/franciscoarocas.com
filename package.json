@@ -1,13 +1,13 @@
 {
   "name": "franciscoarocas.com",
   "private": true,
-  "description": "Web personal de Francisco Arocas: ArocasOS, un escritorio retro en pixel art.",
+  "description": "Web de Francisco Arocas: backend, datos e inteligencia artificial para empresas.",
   "version": "0.1.0",
   "author": "Francisco Arocas",
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "^5.3.0",
-    "@fontsource/pixelify-sans": "^5.3.0",
-    "@fontsource/vt323": "^5.3.0",
+    "@fontsource/geist-mono": "^5.3.0",
+    "@fontsource/geist-sans": "^5.3.0",
+    "@fontsource/unbounded": "^5.3.0",
     "baseline-browser-mapping": "^2.10.9",
     "caniuse-lite": "^1.0.30001780",
     "gatsby": "^5.14.3",
