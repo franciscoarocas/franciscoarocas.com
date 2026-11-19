@@ -285,8 +285,8 @@ const Landing: React.FC = () => {
                   <b data-count={years}>{years}</b>
                   <span>{s.hero.proof[0][0]}</span>
                 </div>
-                {s.hero.proof.slice(1).map(([big, small]) => (
-                  <div key={big}>
+                {s.hero.proof.slice(1).map(([big, small], i) => (
+                  <div key={i}>
                     <b>{big}</b>
                     <span>{small}</span>
                   </div>
@@ -331,8 +331,9 @@ const Landing: React.FC = () => {
               <p>{s.services.intro}</p>
             </div>
             <div className="services">
-              {s.services.items.map(it => (
-                <article key={it.title} className={`svc rv${it.featured ? " featured" : ""}`}>
+              {s.services.items.map((it, i) => (
+                // clave estable: si cambiara con el idioma, React recrearía la tarjeta sin la clase "in" y se quedaría atenuada
+                <article key={i} className={`svc rv${it.featured ? " featured" : ""}`}>
                   {it.badge && <span className="badge">{it.badge}</span>}
                   <div className="ico" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -442,8 +443,8 @@ const Landing: React.FC = () => {
               <p>{s.process.intro}</p>
             </div>
             <ol className="steps">
-              {s.process.steps.map(([title, text]) => (
-                <li key={title}>
+              {s.process.steps.map(([title, text], i) => (
+                <li key={i}>
                   <h3>{title}</h3>
                   <p>{text}</p>
                 </li>
