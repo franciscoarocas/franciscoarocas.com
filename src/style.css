@@ -1814,8 +1814,8 @@ footer.end .social a:hover {
   }
 }
 
-/* idioma en pantallas estrechas: solo la bandera del otro idioma, para cambiar con un toque */
-@media (max-width: 1024px) {
+/* idioma en móvil: solo la bandera del otro idioma, para cambiar con un toque */
+@media (max-width: 640px) {
   nav.main .langs {
     border: 0;
     border-radius: 6px;
