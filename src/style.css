@@ -1690,12 +1690,11 @@ header.top.menu-open {
   }
 }
 @media (max-width: 1024px) {
-  nav.main a.lnk,
-  nav.main .langs {
+  nav.main a.lnk {
     display: none;
   }
   nav.main {
-    gap: 10px;
+    gap: 14px;
   }
   .burger {
     display: inline-flex;
@@ -1812,4 +1811,19 @@ footer.end .social a:hover {
 .mmenu .wrap {
   justify-content: stretch;
   align-items: stretch;
+}
+
+/* idioma: junto a «Pide presupuesto» hasta móvil; en móvil pasa al menú */
+@media (min-width: 641px) {
+  .mmenu-foot {
+    display: none !important;
+  }
+}
+@media (max-width: 640px) {
+  nav.main .langs {
+    display: none;
+  }
+  nav.main {
+    gap: 10px;
+  }
 }
