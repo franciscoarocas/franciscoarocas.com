@@ -13,9 +13,9 @@ const OPTIONS: { lang: Lang; flag: string; label: string; name: string }[] = [
 const LangSwitch: React.FC<{ lang: Lang; setLang: (l: Lang) => void; label: string }> = ({ lang, setLang, label }) => (
   <div className="langs" role="group" aria-label={label}>
     {OPTIONS.map(o => (
-      <button key={o.lang} type="button" className={o.lang === lang ? "on" : ""} aria-pressed={o.lang === lang} title={o.name} onClick={() => setLang(o.lang)}>
+      <button key={o.lang} type="button" className={o.lang === lang ? "on" : ""} aria-pressed={o.lang === lang} title={o.name} aria-label={o.name} onClick={() => setLang(o.lang)}>
         <img src={o.flag} alt="" width={16} height={11} />
-        {o.label}
+        <span>{o.label}</span>
       </button>
     ))}
   </div>
