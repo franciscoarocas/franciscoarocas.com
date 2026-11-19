@@ -112,7 +112,6 @@ const FlowDiagram: React.FC<{ s: Strings }> = ({ s }) => {
         ))}
       </svg>
       <figcaption className="flow-foot">
-        <span>{f.foot}</span>
         <span>
           {f.rows} <b>{rows.toLocaleString("es-ES")}</b>
         </span>

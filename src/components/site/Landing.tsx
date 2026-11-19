@@ -1,13 +1,15 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import DotField from "./DotField"
 import FlowDiagram from "./FlowDiagram"
 import Logo from "./Logo"
 import Contact from "./Contact"
 import CookieToast from "./CookieToast"
 import LangSwitch from "./LangSwitch"
+import Social from "./Social"
 import { useLang } from "../useLang"
-import { certificates, degrees, jobs, stack, yearsOfExperience } from "../../data/profile"
+import { certificates, degrees, jobs, LINKS, reviews, stack, yearsOfExperience } from "../../data/profile"
 import type { LogoKey } from "../../data/profile"
 import { t } from "../../data/strings"
 
@@ -166,10 +168,32 @@ const Landing: React.FC = () => {
   const time = useClock()
   const word = useRotator(s.hero.rotating.length)
   usePageEffects()
+  const [menu, setMenu] = React.useState(false)
+
+  // el menú se cierra con Esc y al volver a pantalla ancha
+  React.useEffect(() => {
+    if (!menu) return
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenu(false)
+    const onResize = () => window.innerWidth > 1024 && setMenu(false)
+    window.addEventListener("keydown", onKey)
+    window.addEventListener("resize", onResize)
+    return () => {
+      window.removeEventListener("keydown", onKey)
+      window.removeEventListener("resize", onResize)
+    }
+  }, [menu])
+
+  const sections: [string, string][] = [
+    ["#servicios", s.nav.services],
+    ["#proyectos", s.nav.projects],
+    ["#proceso", s.nav.process],
+    ["#sobre-mi", s.nav.about],
+    ["#contacto", s.nav.contact],
+  ]
 
   return (
     <>
-      <header className="top">
+      <header className={`top${menu ? " menu-open" : ""}`}>
         <div className="wrap">
           <a className="brand" href="#inicio">
             <span className="mono-mark" aria-hidden="true">
@@ -195,7 +219,29 @@ const Landing: React.FC = () => {
             <a className="btn primary mag" href="#contacto">
               {s.nav.quote} <span className="arr">→</span>
             </a>
+            <button type="button" className={`burger${menu ? " on" : ""}`} aria-label={menu ? s.nav.close : s.nav.open} aria-expanded={menu} aria-controls="menu-movil" onClick={() => setMenu(m => !m)}>
+              <span />
+              <span />
+              <span />
+            </button>
           </nav>
+        </div>
+        <div id="menu-movil" className={`mmenu${menu ? " open" : ""}`}>
+          <div className="wrap">
+            <nav aria-label="Secciones">
+              {sections.map(([href, label], i) => (
+                <a key={href} href={href} onClick={() => setMenu(false)}>
+                  <span className="n">0{i + 1}</span>
+                  {label}
+                </a>
+              ))}
+            </nav>
+            <div className="mmenu-foot">
+              <span className="label">{s.nav.lang}</span>
+              <LangSwitch lang={lang} setLang={setLang} label={s.nav.lang} />
+            </div>
+            <Social labeled className="mmenu-social" />
+          </div>
         </div>
       </header>
 
@@ -351,7 +397,44 @@ const Landing: React.FC = () => {
           </div>
         </section>
 
-        <section className="band" id="proceso" aria-labelledby="c-t">
+        <section className="band" id="recomendaciones" aria-labelledby="r-t">
+          <div className="wrap">
+            <div className="sec-head rv">
+              <span className="label">{s.reviews.label}</span>
+              <h2 id="r-t">{s.reviews.title}</h2>
+            </div>
+            <div className="reviews">
+              {reviews.map(r => (
+                <figure key={r.name} className="review rv">
+                  <span className="qmark" aria-hidden="true">
+                    “
+                  </span>
+                  <blockquote lang="es">{r.quote}</blockquote>
+                  <figcaption>
+                    <span className="avatar" aria-hidden="true">
+                      {r.name
+                        .split(" ")
+                        .filter(w => /^[A-ZÁÉÍÓÚ]/.test(w))
+                        .slice(0, 2)
+                        .map(w => w[0])
+                        .join("")}
+                    </span>
+                    <span>
+                      <b>{r.name}</b>
+                      <span>{r.role}</span>
+                      <span className="rel">
+                        {r.relation[lang]} · {s.reviews.source}
+                        {s.reviews.original && ` · ${s.reviews.original}`}
+                      </span>
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band alt" id="proceso" aria-labelledby="c-t">
           <div className="wrap">
             <div className="sec-head rv">
               <span className="label">{s.process.label}</span>
@@ -372,8 +455,13 @@ const Landing: React.FC = () => {
         <section className="band alt" id="sobre-mi" aria-labelledby="a-t">
           <div className="wrap about">
             <div className="about-copy rv">
-              <span className="label">{s.about.label}</span>
-              <h2 id="a-t">{s.about.title}</h2>
+              <div className="about-head">
+                <StaticImage className="portrait" src="../../images/francisco.jpg" alt="Francisco Arocas" layout="fixed" width={120} height={120} quality={90} placeholder="none" />
+                <div>
+                  <span className="label">{s.about.label}</span>
+                  <h2 id="a-t">{s.about.title}</h2>
+                </div>
+              </div>
               <p>{s.about.p1}</p>
               <p className="muted">{s.about.p2}</p>
               <div className="degrees">
@@ -385,9 +473,18 @@ const Landing: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <Link className="cv-link" to="/cv/">
-                {s.about.cv}
-              </Link>
+              <div className="hire">
+                <b>{s.hire.title}</b>
+                <p>{s.hire.text}</p>
+                <div className="hire-btns">
+                  <Link className="btn ghost" to="/cv/">
+                    {s.hire.cv} <span className="arr">→</span>
+                  </Link>
+                  <a className="btn ghost" href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">
+                    LinkedIn ↗
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="facts rv">
               <div className="fact">
@@ -424,6 +521,7 @@ const Landing: React.FC = () => {
       <footer className="end">
         <div className="wrap">
           <span>© {new Date().getFullYear()} Francisco Arocas · Tacoronte, Tenerife</span>
+          <Social />
           <span>
             {s.footer.noCookies} · <Link to="/cv/">{s.footer.cv}</Link>
           </span>

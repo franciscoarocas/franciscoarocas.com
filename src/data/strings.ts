@@ -1,7 +1,7 @@
 import type { Lang } from "./profile"
 
 const es = {
-  nav: { services: "Servicios", projects: "Proyectos", process: "Cómo trabajo", quote: "Pide presupuesto", lang: "Idioma", clock: "Hora en Tacoronte" },
+  nav: { services: "Servicios", projects: "Proyectos", process: "Cómo trabajo", about: "Sobre mí", contact: "Contacto", quote: "Pide presupuesto", lang: "Idioma", clock: "Hora en Tacoronte", open: "Abrir menú", close: "Cerrar menú" },
   hero: {
     available: "Disponible para nuevos proyectos · Tenerife y remoto",
     lead: "Convierto tus datos y procesos en",
@@ -9,7 +9,7 @@ const es = {
     sub: [
       "Soy Francisco Arocas, ",
       "ingeniero informático y máster en Inteligencia Artificial",
-      ", y trabajo como desarrollador backend freelance. Diseño APIs, automatizo procesos, construyo pipelines de datos y llevo la IA a tu negocio para que tu equipo deje de hacer a mano lo que puede hacer un programa.",
+      ", y trabajo como desarrollador backend. Diseño APIs, automatizo procesos, construyo pipelines de datos y llevo la IA a tu negocio para que tu equipo deje de hacer a mano lo que puede hacer un programa.",
     ],
     cta: "Cuéntame tu proyecto",
     projects: "Ver proyectos",
@@ -27,11 +27,21 @@ const es = {
     inputs: ["Excel · CSV", "Sensores IoT", "APIs externas"],
     core: ["Python + IA", "procesa datos"],
     outputs: ["API REST", "Dashboard", "Informes PDF"],
-    foot: "Cada caja es algo que ya he construido en un proyecto real.",
     rows: "registros hoy",
     aria: "Diagrama: Excel y CSV, sensores y APIs externas entran en un proceso en Python con IA que genera una API, un dashboard e informes en PDF.",
   },
-  marquee: "He trabajado para",
+  marquee: "He trabajado en",
+  reviews: {
+    label: "Recomendaciones",
+    title: "Lo que dicen de trabajar conmigo",
+    source: "Recomendación en LinkedIn",
+    original: "",
+  },
+  hire: {
+    title: "¿Buscas a alguien para tu equipo?",
+    text: "Además de colaborar en proyectos, también estoy abierto a ofertas de empleo en remoto como ingeniero backend, de datos o de IA.",
+    cv: "Ver CV",
+  },
   services: {
     label: "Servicios",
     title: "En qué te puedo ayudar",
@@ -42,7 +52,7 @@ const es = {
         title: "Inteligencia artificial aplicada",
         text: "Llevo modelos de IA a problemas concretos de tu empresa, conectados con tus datos y con los programas que ya usas, y en producción, no en una demo.",
         bullets: ["Asistentes que responden con la información de tus documentos", "Extracción y clasificación automática de facturas, correos o PDFs", "Modelos que predicen ventas, demanda o incidencias a partir de tus datos"],
-        tags: ["Machine learning", "Deep learning", "LLMs", "Python"],
+        tags: ["Machine learning", "Deep learning", "LLMs", "Claude API", "OpenAI API", "LangChain", "LangGraph", "FastMCP", "Python"],
       },
       {
         icon: "api", title: "APIs y backends a medida",
@@ -54,7 +64,7 @@ const es = {
         icon: "data", title: "Automatización y datos",
         text: "Para cuando alguien pasa horas copiando datos entre hojas de cálculo o preparando el mismo informe cada semana.",
         bullets: ["Pipelines que recogen, limpian y cruzan datos solos", "Informes automáticos en Excel, CSV o PDF", "Scraping para reunir datos de otras webs", "Procesado de grandes volúmenes de datos sin bloquear tu sistema"],
-        tags: ["Pandas", "Airflow", "PostgreSQL"],
+        tags: ["Pandas", "PostgreSQL", "BeautifulSoup"],
       },
       {
         icon: "dash", title: "Dashboards y aplicaciones web",
@@ -91,7 +101,7 @@ const es = {
     title: "Ingeniero, no agencia",
     p1: "Trabajas directamente conmigo, de la primera llamada a la entrega. Soy graduado en Ingeniería Informática por la Universidad de La Laguna y máster en Inteligencia Artificial, con certificación de AWS. Vivo en Tacoronte, Tenerife, y trabajo en remoto con equipos distribuidos.",
     p2: "He programado para un telescopio, una naviera, una universidad, una administración pública y una empresa financiera. Lo que tienen en común es lo que mejor se me da: tomar datos desordenados y convertirlos en algo útil y fiable.",
-    facts: { experience: "Experiencia", experienceValue: (y: number) => `${y} años en backend, datos e IA`, certificates: "Certificados", location: "Ubicación", locationValue: "Tacoronte, Tenerife · trabajo en remoto", languages: "Idiomas", languagesValue: "Español nativo · inglés profesional", stack: "Stack" },
+    facts: { experience: "Experiencia", experienceValue: (y: number) => `${y} años en backend, datos e IA`, certificates: "Certificados", location: "Ubicación", locationValue: "Tacoronte, Tenerife · trabajo en remoto", languages: "Idiomas", languagesValue: "Español nativo · inglés B2", stack: "Stack" },
     cv: "Ver CV completo →",
   },
   contact: {
@@ -104,7 +114,7 @@ const es = {
     name: "Nombre",
     company: "Empresa (opcional)",
     need: "¿Qué necesitas?",
-    needs: ["Inteligencia artificial", "API o backend", "Automatizar procesos", "Dashboard o app web", "Cloud o despliegue", "Otra cosa"],
+    needs: ["Inteligencia artificial", "API o backend", "Automatizar procesos", "Dashboard o app web", "Cloud o despliegue", "Oferta de empleo", "Otra cosa"],
     when: "¿Para cuándo?",
     whens: ["Lo antes posible", "En 1–3 meses", "Más adelante", "Solo estoy explorando"],
     message: "Cuéntame un poco más",
@@ -131,7 +141,7 @@ const es = {
 }
 
 const en: typeof es = {
-  nav: { services: "Services", projects: "Projects", process: "How I work", quote: "Get a quote", lang: "Language", clock: "Time in Tacoronte" },
+  nav: { services: "Services", projects: "Projects", process: "How I work", about: "About me", contact: "Contact", quote: "Get a quote", lang: "Language", clock: "Time in Tacoronte", open: "Open menu", close: "Close menu" },
   hero: {
     available: "Available for new projects · Tenerife and remote",
     lead: "I turn your data and processes into",
@@ -139,7 +149,7 @@ const en: typeof es = {
     sub: [
       "I'm Francisco Arocas, ",
       "a computer engineer with a master's in Artificial Intelligence",
-      ", working as a freelance backend developer. I design APIs, automate processes, build data pipelines and bring AI to your business, so your team stops doing by hand what a program can do.",
+      ", working as a backend developer. I design APIs, automate processes, build data pipelines and bring AI to your business, so your team stops doing by hand what a program can do.",
     ],
     cta: "Tell me about your project",
     projects: "See projects",
@@ -157,11 +167,21 @@ const en: typeof es = {
     inputs: ["Excel · CSV", "IoT sensors", "External APIs"],
     core: ["Python + AI", "processes"],
     outputs: ["REST API", "Dashboard", "PDF reports"],
-    foot: "Every box is something I have already built in a real project.",
     rows: "records today",
     aria: "Diagram: Excel and CSV files, sensors and external APIs flow into a Python and AI process that produces an API, a dashboard and PDF reports.",
   },
-  marquee: "I have worked for",
+  marquee: "I have worked at",
+  reviews: {
+    label: "Recommendations",
+    title: "What people say about working with me",
+    source: "LinkedIn recommendation",
+    original: "Original in Spanish",
+  },
+  hire: {
+    title: "Looking for someone to join your team?",
+    text: "Besides project work, I'm also open to remote job offers as a backend, data or AI engineer.",
+    cv: "See CV",
+  },
   services: {
     label: "Services",
     title: "How I can help",
@@ -172,7 +192,7 @@ const en: typeof es = {
         title: "Applied artificial intelligence",
         text: "I bring AI models to concrete problems in your company, connected to your data and the software you already use, and in production, not in a demo.",
         bullets: ["Assistants that answer using your own documents", "Automatic extraction and classification of invoices, emails or PDFs", "Models that predict sales, demand or incidents from your data"],
-        tags: ["Machine learning", "Deep learning", "LLMs", "Python"],
+        tags: ["Machine learning", "Deep learning", "LLMs", "Claude API", "OpenAI API", "LangChain", "LangGraph", "FastMCP", "Python"],
       },
       {
         icon: "api", title: "Custom APIs and backends",
@@ -184,7 +204,7 @@ const en: typeof es = {
         icon: "data", title: "Automation and data",
         text: "For when someone spends hours copying data between spreadsheets or building the same report every week.",
         bullets: ["Pipelines that collect, clean and join data on their own", "Automatic Excel, CSV or PDF reports", "Scraping to gather data from other websites", "Processing large data volumes without slowing your systems"],
-        tags: ["Pandas", "Airflow", "PostgreSQL"],
+        tags: ["Pandas", "PostgreSQL", "BeautifulSoup"],
       },
       {
         icon: "dash", title: "Dashboards and web apps",
@@ -221,7 +241,7 @@ const en: typeof es = {
     title: "An engineer, not an agency",
     p1: "You work directly with me, from the first call to delivery. I hold a degree in Computer Engineering from the University of La Laguna and a master's in Artificial Intelligence, and I'm AWS certified. I live in Tacoronte, Tenerife, and work remotely with distributed teams.",
     p2: "I've written software for a telescope, a ferry company, a university, a public administration and a financial company. What they have in common is what I do best: taking messy data and turning it into something useful and reliable.",
-    facts: { experience: "Experience", experienceValue: (y: number) => `${y} years in backend, data and AI`, certificates: "Certificates", location: "Location", locationValue: "Tacoronte, Tenerife · remote work", languages: "Languages", languagesValue: "Native Spanish · professional English", stack: "Stack" },
+    facts: { experience: "Experience", experienceValue: (y: number) => `${y} years in backend, data and AI`, certificates: "Certificates", location: "Location", locationValue: "Tacoronte, Tenerife · remote work", languages: "Languages", languagesValue: "Native Spanish · English B2", stack: "Stack" },
     cv: "See full CV →",
   },
   contact: {
@@ -234,7 +254,7 @@ const en: typeof es = {
     name: "Name",
     company: "Company (optional)",
     need: "What do you need?",
-    needs: ["Artificial intelligence", "API or backend", "Process automation", "Dashboard or web app", "Cloud or deployment", "Something else"],
+    needs: ["Artificial intelligence", "API or backend", "Process automation", "Dashboard or web app", "Cloud or deployment", "Job offer", "Something else"],
     when: "When?",
     whens: ["As soon as possible", "In 1–3 months", "Later on", "Just exploring"],
     message: "Tell me a bit more",

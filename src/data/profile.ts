@@ -8,7 +8,7 @@ export const EMAIL = "hola@franciscoarocas.com"
 export const LINKS = {
   linkedin: "https://www.linkedin.com/in/francisco-arocas/",
   github: "https://github.com/franciscoarocas/",
-  blog: "https://blog.franciscoarocas.com",
+  medium: "https://medium.com/@franciscoarocash",
 }
 
 // Primer puesto: noviembre de 2021
@@ -46,7 +46,7 @@ export const certificates = [
   "Meta Front-End Developer",
 ]
 
-export const stack = ["Python", "Django REST", "FastAPI", "PostgreSQL", "Pandas", "Airflow", "React", "Docker", "AWS"]
+export const stack = ["Python", "Django REST", "FastAPI", "PostgreSQL", "Pandas", "React", "Docker", "AWS"]
 
 // Proyectos (portada) y puestos (CV), del más reciente al más antiguo
 export interface Job {
@@ -122,14 +122,15 @@ export const jobs: Job[] = [
     role: { es: "Ingeniero de datos", en: "Data Engineer" },
     title: { es: "Toda la flota, en un mapa", en: "The whole fleet, on a map" },
     text: {
-      es: "Como ingeniero de datos, monté y mantuve Apache Airflow para procesar la telemetría de los barcos y construí una API con FastAPI y una aplicación web en React para ver sus rutas y métricas sobre un mapa.",
-      en: "As a data engineer, I set up and ran Apache Airflow to process ship telemetry, and built a FastAPI backend and a React web app to see routes and metrics on a map.",
+      es: "Como ingeniero de datos, procesé y analicé la telemetría de los barcos con Python y construí una API con FastAPI y una aplicación web en React para ver sus rutas y métricas sobre un mapa.",
+      en: "As a data engineer, I processed and analysed ship telemetry with Python, and built a FastAPI backend and a React web app to see routes and metrics on a map.",
     },
     result: { es: "Flota en el mapa", en: "Fleet on a map" },
     resultNote: { es: "rutas y métricas de cada barco en una aplicación web", en: "routes and metrics for every ship in a web app" },
-    tags: ["Airflow", "FastAPI", "React", "Leaflet", "Pandas"],
+    tags: ["Python", "FastAPI", "React", "Leaflet", "Pandas"],
     bullets: [
-      { es: "Instalación, mantenimiento y administración de Apache Airflow y creación de DAGs.", en: "Installation, maintenance and administration of Apache Airflow, and DAG development." },
+      { es: "Monitorización y análisis de los datos obtenidos de los barcos.", en: "Monitoring and analysis of the data collected from the ships." },
+      { es: "Instalación y administración de máquinas virtuales Linux.", en: "Installation and administration of Linux virtual machines." },
       { es: "Análisis de datos con Python, Pandas, NumPy y Folium.", en: "Data analysis with Python, Pandas, NumPy and Folium." },
       { es: "Aplicación de visualización con FastAPI, React, Bootstrap y Leaflet.", en: "Visualisation app with FastAPI, React, Bootstrap and Leaflet." },
       { es: "Beca de la Fundación General de la Universidad de La Laguna.", en: "Scholarship from the General Foundation of the University of La Laguna." },
@@ -177,5 +178,30 @@ export const jobs: Job[] = [
       { es: "Backend en Python con Django, NumPy y Pandas.", en: "Python backend with Django, NumPy and Pandas." },
       { es: "Frontend con React, JavaScript y Bootstrap.", en: "Frontend with React, JavaScript and Bootstrap." },
     ],
+  },
+]
+
+
+// Recomendaciones publicadas en LinkedIn (se muestran tal cual, en su idioma original)
+export interface Review {
+  name: string
+  role: string
+  relation: L
+  quote: string
+}
+export const reviews: Review[] = [
+  {
+    name: "Raúl D. Martín",
+    role: "CEO & Founder en Sun-Rose Foods",
+    relation: { es: "Cliente · 2023", en: "Client · 2023" },
+    quote:
+      "Francisco nos ayudó a crear nuestra página web corporativa, desde cero. Gracias a sus conocimientos y su talento tanto en código como en diversos formatos de web (WordPress, Woocommerce..) tenemos hoy en día una de las páginas más punteras de nuestro sector. Además, siempre ha estado al tanto de las actualizaciones, y ha mantenido un seguimiento en el tiempo de la misma. Fue todo un acierto y volvería a trabajar con él nuevamente.",
+  },
+  {
+    name: "Daniel Antonio Fernández Pérez",
+    role: "Generative AI Lead Iberia & LATAM · CTO",
+    relation: { es: "Compañero de proyecto · 2022", en: "Project colleague · 2022" },
+    quote:
+      "Trabajé con Francisco en el proyecto Family Community S.L, él haciendo el FrontEnd. Cabe destacar su profesionalidad y ejemplaridad a la hora de cumplir los objetivos, así como el cuidado y atención de los requerimientos que iba diciendo el cliente final.",
   },
 ]

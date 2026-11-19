@@ -24,7 +24,7 @@ const CvPage: React.FC = () => {
           {lang === "es" ? "Ingeniero backend · datos e IA" : "Backend engineer · data and AI"} · Tacoronte, Tenerife · {s.cv.years(yearsOfExperience())}
         </p>
         <p className="muted">
-          <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKS.linkedin}>LinkedIn</a> · <a href={LINKS.github}>GitHub</a> · <a href={LINKS.blog}>Blog</a>
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKS.linkedin}>LinkedIn</a> · <a href={LINKS.github}>GitHub</a> · <a href={LINKS.medium}>Medium</a>
         </p>
 
         <h2>{s.cv.education}</h2>

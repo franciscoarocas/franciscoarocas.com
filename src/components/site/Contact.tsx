@@ -1,5 +1,6 @@
 import * as React from "react"
-import { EMAIL, LINKS } from "../../data/profile"
+import { EMAIL } from "../../data/profile"
+import Social from "./Social"
 import type { Strings } from "../../data/strings"
 
 // Formulario de presupuesto sin servidor: monta el mensaje y lo abre en Gmail o en el programa de correo.
@@ -59,16 +60,8 @@ const Contact: React.FC<{ s: Strings }> = ({ s }) => {
                 {c.copy}
               </button>
             </div>
+            <Social labeled className="contact-social" />
             <div className="row small">
-              <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn ↗
-              </a>
-              <a href={LINKS.github} target="_blank" rel="noopener noreferrer">
-                GitHub ↗
-              </a>
-              <a href={LINKS.blog} target="_blank" rel="noopener noreferrer">
-                Blog ↗
-              </a>
               <span className="label" aria-live="polite">
                 {note}
               </span>
