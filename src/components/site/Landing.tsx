@@ -236,10 +236,6 @@ const Landing: React.FC = () => {
                 </a>
               ))}
             </nav>
-            <div className="mmenu-foot">
-              <span className="label">{s.nav.lang}</span>
-              <LangSwitch lang={lang} setLang={setLang} label={s.nav.lang} />
-            </div>
             <Social labeled className="mmenu-social" />
           </div>
         </div>
